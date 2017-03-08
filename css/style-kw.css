@@ -1,3 +1,14 @@
+@font-face {
+  font-family: 'CircularPro-Bold';
+  src: url('../fonts/CircularPro-Bold.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/CircularPro-Bold.otf')  format('opentype'),
+       url('../fonts/CircularPro-Bold.woff') format('woff'),
+       url('../fonts/CircularPro-Bold.ttf')  format('truetype'),
+       url('../fonts/CircularPro-Bold.svg#CircularPro-Bold') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
 body,
 div,
 ul,
@@ -11,7 +22,9 @@ h5,
 h6 {
   padding: 0;
   margin: 0;
-  font-family: "Roboto", sans-serif;
+  font-family: 'CircularPro-Bold', Helvetica, sans-serif;
+  font-weight: normal;
+  -webkit-font-smoothing: antialiased;
 }
 
 .clear-fix {
@@ -21,12 +34,12 @@ h6 {
 .education-entry,
 .work-entry,
 .project-entry {
-  padding: 0 5%;
+  padding: 10px 5%;
 }
 
 h1 {
   font-size: 40px;
-  color: #f5a623;
+  color: blue;
   line-height: 48px;
   display: inline;
 }
@@ -85,51 +98,65 @@ p {
   line-height: 21px;
 }
 
-a {
-  color: #1199c3;
+a, a:visited {
+  color: blue;
   text-decoration: none;
   margin-top: 10px;
   display: block;
+    cursor: pointer;
 }
 
+
 .welcome-message {
-  font-style: italic;
-  font-size: 18px;
-  color: #f3f3f3;
-  line-height: 28px;
+    font-style: italic;
+    font-size: 18px;
+    color: gray;
+    line-height: 28px;
+    padding-top: 20px
 }
 
 #skills-h3 {
-  color: #f5ae23;
+  color: blue;
   display: none;
 }
+/*
 
 .orange {
   background-color: #f5ae23;
 }
+*/
 
+/*
 .orange-text {
   color: #f5ae23;
+}
+*/
+.blue{
+    color:blue;
+}
+
+.blue-text{
+    color:blue;
 }
 
 .white-text {
   font-weight: bold;
-  color: #fff;
+  color: gray;
 }
 
 .gray {
-  background-color: #f3f3f3;
+  background-color: lightgray;
   padding-bottom: 10px;
   clear: both;
 }
 
 .dark-gray {
-  background-color: #4a4a4a;
+  background-color: #CCCCCC;
 }
 
 /* TODO: Replace with image later */
 #header {
-  background-color: #484848;
+  background-color: white;
 }
 
 .flex-box {
@@ -161,6 +188,8 @@ ul {
   padding: 10px;
   width: 200px;
   display: none;
+    border-radius: 50%;
+    
 }
 
 img {
@@ -197,7 +226,7 @@ span {
     width: 150px;
   }
   .welcome-message {
-    display: none;
+    display: -webkit-inline-box;
   }
 }
 
@@ -218,4 +247,32 @@ span {
   .biopic {
     display: block;
   }
+}
+
+
+/*Skills Flexbox fix */
+#skills {
+  display: -webkit-inline-box;
+}
+
+/*row fix */
+.row{
+    margin-right: 0;
+    margin-left:  0;
+}
+
+/*button color fix */
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open .dropdown-toggle.btn-primary, .btn-primary{
+    background-color:gray;
+    border-color:darkgray;
+}
+
+/*Work Fix */
+
+#workExperience div.row div a.work-employer, #workExperience div.row div div.date-text,#workExperience div.row div div.location-text, #workExperience div.row div p{
+    padding-left: 5%;
+    padding-right: 5%;
+    
+    
 }
