@@ -42,14 +42,13 @@ var bio = {
         $("#topContacts, #footerContacts").append(formattedGithub);
         
         var formattedTwitterLink = HTMLtwitter.replace("#", bio.contacts.twitterLink);
-        var formattedTwitter = formattedTwitterLink.replace("%data%", bio.contacts.twitter);
+        var formattedTwitter = formattedTwitterLink.replace(data, bio.contacts.twitter);
         $("#topContacts, #footerContacts").append(formattedTwitter);
         
         var formattedLocationLink =HTMLlocation.replace("#","http://kjwhitla.github.io/#lets-connect");
-        var formattedLocation = formattedLocationLink.replace("%data%", bio.contacts.location);
+        var formattedLocation = formattedLocationLink.replace(data, bio.contacts.location);
         $("#topContacts, #footerContacts").append(formattedLocation);
-        
-
+    
         var formattedPic = HTMLbioPic.replace("%data%", bio.biopic);
         $("#header").append(formattedPic);
 
@@ -154,7 +153,6 @@ var work = {
             "url": "#",
             "description": "I am responsible for designing, building, and managing the digital presence and strategy of the IBM Research organization."
         },
-
         {
             "employer": "GTB (Team Detroit)",
             "title": "Global Implementation Analyst",
@@ -180,7 +178,6 @@ var work = {
                 $("#workExperience").append(workDates);
                 $("#workExperience").append(workLocation);
                 $("#workExperience").append(workDescription);
-                
 
                });
         }
@@ -188,67 +185,48 @@ var work = {
 };
 
 var projects = {
-    "projects": [
+    "proj": [
         {
             "title": "Beer Exchange Mobile App",
-            "dates": "March, 2012 - in progress",
-            "url": "#",
-            "description": "HTML, CSS, JavaScript, WordPress."
+            "dates": "Feb, 2014 - in progress",
+            "link": "#",
+            "description": "HTML, CSS, JavaScript, WordPress.",
+            "images": "../images/project-1.png"
         },
         {
             "title": "BraedenWhitla.com",
-            "dates": "Jun, 2016 - July, 2016",
-            "url": "#",
-            "description": "HTML, CSS, jQuery, JavaScript, Bootstrap"
+            "dates": "Jun, 2016 - present",
+            "link": "#",
+            "description": "HTML, CSS, jQuery, JavaScript, Bootstrap",
+            "images": "../images/project-2.png"
         },
         {
             "title": "Lake Tahoe",
-            "dates": "Jun, 2016 - in progress",
-            "url": "#",
-            "description": "HTML, CSS, jQuery, JavaScript, Bootstrap"
+            "dates": "May, 2016",
+            "link": "#",
+            "description": "HTML, CSS, jQuery, JavaScript, Bootstrap",
+            "images": "../images/project-3.png"
         }
 
     ],
     "display": function () {
-        if (projects.projects.length > 0) {
+        if (projects.proj.length > 0) {
 
-            $("#projects").append(HTMLprojectStart);
+            projects.proj.forEach(function (proj) {
+                var formattedProjectlink = HTMLprojectURL.replace("#", proj.link);
+                var formattedProject = HTMLprojectTitle.replace(data, proj.title);
+               
+                var formattedProjectDates = HTMLprojectDates.replace(data, proj.dates);
+                var formattedProjectDescription = HTMLprojectDescription.replace(data, proj.description);
+                var formattedProjectImages = HTMLprojectImage.replace(data, proj.images);
 
-            
-
-            // In JavaScript, for-in loops can be used for objects, but should not be used for arrays. This is because the for-in loop passes the keys of each property. Array values do not have any keys.
-            /* for(var proj in projects.projects) {
-     
-                 var _project = HTMLprojectTitle.replace("%data%", projects.projects[proj].title);
-                 var myProject = _project.replace("#", projects.projects[proj].url);
-                 var projectDates = HTMLprojectDates.replace("%data%", projects.projects[proj].dates);
-                 var projectDescription = HTMLprojectDescription.replace("%data%", projects.projects[proj].description);
-                 var projectImg = HTMLprojectImage.replace("%data%", projects.projects[proj].images[0]);
-                  
-                 
-                 $("#projects").append(myProject);
-                 $("#projects").append(projectDates);
-                 $("#projects").append(projectDescription);
-                 $("#projects").append(projectImg);
-              
-             } */
-
-            projects.projects.forEach(function (proj) {
-                var _project = HTMLprojectTitle.replace(data, proj.title);
-                var myProject = _project.replace("#", proj.url);
-                var projectDates = HTMLprojectDates.replace(data, proj.dates);
-                var projectDescription = HTMLprojectDescription.replace(data, proj.description);
-            for (var x = 0; x < proj.images.length; x++){
-                var projectImg = HTMLprojectImage.replace(data, proj.images[x]);
-            }
-
-                $("#projects").append(myProject);
-                $("#projects").append(projectDates);
-                $("#projects").append(projectDescription);
-//                $("#projects").append(projectImg);
+                $("#projects").append(HTMLprojectStart);
+                $("#projects").append(formattedProject);
+                $("#projects").append(formattedProjectDates);
+                $("#projects").append(formattedProjectDescription);
+                $("#projects").append(formattedProjectImages);
 
             });      
-          
          }
     }
 };
@@ -262,51 +240,3 @@ projects.display();
 
 /* adding div for google map */
 $("#mapDiv").append(googleMap);
-
-
-// Hide work
-
-$(document).ready(function(){
-    $("#hide").click(function(){
-        $("#workExperience").toggle(2000);
-    });
-    $("#show").click(function(){
-        $("#workExperience").show();
-    });
-});
-
-// Hide projects
-
-$(document).ready(function(){
-    $("#projectsButton").click(function(){
-        $("#projects").toggle(2000);
-    });
-});
-
-// Hide education
-
-$(document).ready(function(){
-    $("#educationButton").click(function(){
-
-        $("#education").toggle(2000);
-
-    });
-});
-
-
-// event listener 
-
-var list = document.querySelectorAll("li");
-
-for (var i = 0; i < list.length; i++){
- list[i].addEventListener("mouseover", function(){ 
-   
-   this.classList.add("selected");
-
- });
-
-list[i].addEventListener("mouseout", function(){
-   this.classList.remove("selected");
-});
-
-}

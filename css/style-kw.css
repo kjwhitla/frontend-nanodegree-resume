@@ -209,7 +209,7 @@ span {
 @media only screen and (max-width: 1024px) {
   #lets-connect {
     margin-top: 5%;
-  }
+  } 
 }
 
 @media only screen and (max-width:900px) {
@@ -247,8 +247,8 @@ span {
   .biopic {
     display: block;
   }
+    
 }
-
 
 /*Skills Flexbox fix */
 #skills {
@@ -271,8 +271,26 @@ span {
 /*Work Fix */
 
 #workExperience div.row div a.work-employer, #workExperience div.row div div.date-text,#workExperience div.row div div.location-text, #workExperience div.row div p{
+/*
     padding-left: 5%;
     padding-right: 5%;
+*/
     
     
+}
+.content-padding{
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+/*Project Images */
+
+
+.project-img{
+    width: 35%;
+}
+
+.heading-fix h2{
+    padding-left: 0% !Important;
+    padding-right: 0% !Important;
 }

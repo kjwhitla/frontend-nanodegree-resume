@@ -21,13 +21,14 @@ var HTMLworkEmployer = '<div class="row"><div class="col-md-12"><a class="work-e
 var HTMLworkTitle = ' - %data%</a>';
 var HTMLworkDates = '<div class="row"><div class="col-md-12"><div class="date-text">%data%</div>';
 var HTMLworkLocation = '<div class="row"><div class="col-md-12"><div class="location-text">%data%</div></div>';
-var HTMLworkDescription = '<div class="row"><div class="col-md-12"><p><br>%data%</p></div></div>';
+var HTMLworkDescription = '<div class="row"><div class="col-md-12"><p>%data%</p></div></div>';
 
 var HTMLprojectStart = '<div class="project-entry"></div>';
-var HTMLprojectTitle = '<div class="row"><div class="col-md-12"><a href="#">%data%</a></div></div>';
-var HTMLprojectDates = '<div class="row"><div class="col-md-12 date-text">%data%</div></div>';
-var HTMLprojectDescription = '<p><br>%data%</p>';
-var HTMLprojectImage = '<img src="%data%">';
+var HTMLprojectTitle = '<div class="row "><div class="col-md-12"><a href="#" >%data%</a></div></div>';
+var HTMLprojectDates = '<div class="row"><div class="col-md-12 date-text ">%data%</div></div>';
+var HTMLprojectDescription = '<div class="row"><div class="col-md-12"><p>%data%</p></div></div>';
+var HTMLprojectImage = '<img class="project-img" src="%data%">';
+var HTMLprojectURL = '<a href="#">%data%</a>';
 
 var HTMLschoolStart = '<div class="education-entry"></div>';
 var HTMLschoolName = '<div class="row"><div class="col-md-12"><a href="#">%data%';
@@ -48,15 +49,17 @@ var googleMap = '<div id="map"></div>';
 /*
 The International Name challenge in Lesson 2 where you'll create a function that will need this helper code to run. Don't delete! It hooks up your code to the button you'll be appending.
 */
-/*$(document).ready(function() {
+$(document).ready(function() {
     $('button').click(function() {
         var iName = inName() || function() {};
         $('#name').html(iName);
     });
-}); */
+}); 
 
-/*
-The next few lines about clicks are for the Collecting Click Locations quiz in Lesson 2.
+
+
+
+//The next few lines about clicks are for the Collecting Click Locations quiz in Lesson 2.
 
 clickLocations = [];
 
@@ -69,9 +72,11 @@ function logClicks(x, y) {
 }
 
 $(document).click(function(loc) {
-    // your code goes here!
+    var x = loc.pageX;
+    var y = loc.pageY;
+    
+    logClicks (x,y);
 }); 
-
 
 
 /*
@@ -105,25 +110,12 @@ function initializeMap() {
     written for bio, education, and work.
     */
     function locationFinder() {
-
-        // initializes an empty array
+     
         var locations = [];
-
-        // adds the single location property from bio to the locations array
-        locations.push(bio.contacts.location);
-
-        // iterates through school locations and appends each location to
-        // the locations array. Note that forEach is used for array iteration
-        // as described in the Udacity FEND Style Guide: 
-        // https://udacity.github.io/frontend-nanodegree-styleguide/javascript.html#for-in-loop
+        locations.push(bio.contacts.location);//        
         education.schools.forEach(function(school) {
             locations.push(school.location);
         });
-
-        // iterates through work locations and appends each location to
-        // the locations array. Note that forEach is used for array iteration
-        // as described in the Udacity FEND Style Guide: 
-        // https://udacity.github.io/frontend-nanodegree-styleguide/javascript.html#for-in-loop
         work.jobs.forEach(function(job) {
             locations.push(job.location);
         });
@@ -222,7 +214,7 @@ Uncomment the code below when you're ready to implement a Google Map!
 */
 
 // Calls the initializeMap() function when the page loads
-window.addEventListener('load', initializeMap);
+//window.addEventListener('load', initializeMap);
 
 // Vanilla JS way to listen for resizing of the window
 // and adjust map bounds
