@@ -80,7 +80,7 @@ h5 {
   font-size: 14px;
   color: #999;
   line-height: 16px;
-  float: left;
+/*  float: left;*/
 }
 
 .location-text {
@@ -112,25 +112,18 @@ a, a:visited {
     font-size: 18px;
     color: gray;
     line-height: 28px;
-    padding-top: 20px
+    padding-top: 20px;
+    display: inline-flex;
 }
 
 #skills-h3 {
-  color: blue;
-  display: none;
-}
-/*
+    color: blue;
+    display: inline-flex;
+    padding-left: 0px !important;
+    padding-right: 0px !important;
 
-.orange {
-  background-color: #f5ae23;
 }
-*/
 
-/*
-.orange-text {
-  color: #f5ae23;
-}
-*/
 .blue{
     color:blue;
 }
@@ -184,12 +177,11 @@ ul {
 }
 
 .biopic {
-  float: left;
-  padding: 10px;
-  width: 200px;
-  display: none;
+/*  float: left;*/
+    padding: 10px;
+    width: 200px;
+    display: inline-flex;
     border-radius: 50%;
-    
 }
 
 img {
@@ -227,6 +219,7 @@ span {
   }
   .welcome-message {
     display: -webkit-inline-box;
+      padding-top: 20px;
   }
 }
 
@@ -245,14 +238,14 @@ span {
 @media only screen and (min-width: 750px) {
   #skills-h3,
   .biopic {
-    display: block;
+    display: inline-flex;
   }
     
 }
 
 /*Skills Flexbox fix */
 #skills {
-  display: -webkit-inline-box;
+  display: inline-flex;
 }
 
 /*row fix */
@@ -268,29 +261,20 @@ span {
     border-color:darkgray;
 }
 
-/*Work Fix */
-
-#workExperience div.row div a.work-employer, #workExperience div.row div div.date-text,#workExperience div.row div div.location-text, #workExperience div.row div p{
-/*
-    padding-left: 5%;
-    padding-right: 5%;
-*/
-    
-    
-}
 .content-padding{
     padding-left: 5%;
     padding-right: 5%;
 }
 
 /*Project Images */
-
-
 .project-img{
     width: 35%;
+    display: inline-flex !important;
 }
 
 .heading-fix h2{
     padding-left: 0% !Important;
     padding-right: 0% !Important;
 }
+
+#

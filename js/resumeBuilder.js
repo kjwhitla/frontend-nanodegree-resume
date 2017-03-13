@@ -15,7 +15,7 @@ var bio = {
         "twitterLink":"https://twitter.com/madebyKeegan",
         "location": "San Francisco, CA"
     },
-    "welcomeMessage": "Eventually everything connects - people, ideas, objects. The quality of the connections is the key to quality per se. -Charles Eames",
+    "welcomeMessage": "Eventually everything connects - people, ideas, objects. The quality of the connections is the key to quality per se.<br/> -Charles Eames",
     "skills": ["JavaScript", "jQuery", "HTML", "CSS", "Bootstrap", "Angular", "Python", "Swift"],
     "biopic": "../images/keegan-whitla.png",
     "display": function () {
@@ -41,7 +41,6 @@ var bio = {
         var formattedLocation = formattedLocationLink.replace(data, bio.contacts.location);
         
         $("#topContacts, #footerContacts").append(formattedPhone + formattedEmail + formattedGithub + formattedTwitter + formattedLocation);
-
     
         var formattedPic = HTMLbioPic.replace("%data%", bio.biopic);
         var formattedWelcomeMsg = HTMLwelcomeMsg.replace(data, bio.welcomeMessage);
@@ -181,21 +180,21 @@ var projects = {
             "dates": "Feb, 2014 - in progress",
             "link": "#",
             "description": "HTML, CSS, JavaScript, WordPress - An interactive Andriod/iOS App allowing you to reserve beverage prices at your favorite bars and restaurants.",
-            "images": "../images/project-1.png"
+            "imageArray": ["../images/project-1.png", "../images/project-1-2.png"]
         },
         {
             "title": "BraedenWhitla.com",
             "dates": "Jun, 2016 - present",
             "link": "#",
             "description": "HTML, CSS, jQuery, JavaScript, Bootstrap - An artist's portfolio must shine, and this website was built to do just that, stay lightweight, show quality images, and share contact information.",
-            "images": "../images/project-2.png"
+            "imageArray": ["../images/project-2.png"]
         },
         {
             "title": "Lake Tahoe",
             "dates": "May, 2016",
             "link": "#",
             "description": "HTML, CSS, jQuery, JavaScript, Bootstrap - A templated design to showcase lake tahoe.",
-            "images": "../images/project-3.png"
+            "imageArray": ["../images/project-3.png"]
         }
 
     ],
@@ -209,21 +208,27 @@ var projects = {
                
                 var formattedProjectDates = HTMLprojectDates.replace(data, proj.dates);
                 var formattedProjectDescription = HTMLprojectDescription.replace(data, proj.description);
-                var formattedProjectImages = HTMLprojectImage.replace(data, proj.images);
+                
+                var  formattedProjectImages = "";
+                    if(proj.imageArray.length > 0){
+                        proj.imageArray.forEach(function(imageArray){
+                           var image = imageArray;
+                            var formatImageString = HTMLprojectImage.replace(data, image);
+                            formattedProjectImages = formattedProjectImages.concat(formatImageString);
+                        }
+                                               
+                        )};
 
-                $("#projects").append(HTMLprojectStart + formattedProject + formattedProjectDates + formattedProjectDescription + formattedProjectImages);
+                $("#projects").append(HTMLprojectStart + formattedProject + formattedProjectDates + formattedProjectDescription + formattedProjectImages );
 
             });      
          }
     }
 };
 
-
-/* calling display() methods for above declared objects */
 bio.display();
 education.display();
 work.display();
 projects.display();
 
-/* adding div for google map */
 $("#mapDiv").append(googleMap);
