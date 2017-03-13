@@ -1,12 +1,12 @@
 @font-face {
-  font-family: 'CircularPro-Bold';
-  src: url('../fonts/CircularPro-Bold.eot?#iefix') format('embedded-opentype'),
+    font-family: 'CircularPro-Bold';
+    src: url('../fonts/CircularPro-Bold.eot?#iefix') format('embedded-opentype'),
        url('../fonts/CircularPro-Bold.otf')  format('opentype'),
        url('../fonts/CircularPro-Bold.woff') format('woff'),
        url('../fonts/CircularPro-Bold.ttf')  format('truetype'),
        url('../fonts/CircularPro-Bold.svg#CircularPro-Bold') format('svg');
-  font-weight: normal;
-  font-style: normal;
+    font-weight: normal;
+    font-style: normal;
 }
 
 body,
@@ -20,92 +20,88 @@ h3,
 h4,
 h5,
 h6 {
-  padding: 0;
-  margin: 0;
-  font-family: 'CircularPro-Bold', Helvetica, sans-serif;
-  font-weight: normal;
-  -webkit-font-smoothing: antialiased;
+    padding: 0;
+    margin: 0;
+    font-family: 'CircularPro-Bold', Helvetica, sans-serif;
+    font-weight: normal;
+    -webkit-font-smoothing: antialiased;
 }
 
 .clear-fix {
-  overflow: auto;
+    overflow: auto;
 }
 
 .education-entry,
 .work-entry,
 .project-entry {
-  padding: 10px 5%;
+    padding: 10px 5%;
 }
 
 h1 {
-  font-size: 40px;
-  color: blue;
-  line-height: 48px;
-  display: inline;
+    font-size: 40px;
+    color: blue;
+    line-height: 48px;
+    display: inline;
 }
 
 h2 {
-  font-weight: bold;
-  font-size: 24px;
-  color: #999;
-  line-height: 29px;
-  padding: 10px;
+    font-weight: bold;
+    font-size: 24px;
+    color: #999;
+    line-height: 29px;
+    padding: 10px;
 }
 
 h3 {
-  font-style: italic;
-  font-size: 20px;
-  color: #000;
-  line-height: 22px;
+    font-style: italic;
+    font-size: 20px;
+    color: #000;
+    line-height: 22px;
 }
 
 h4 {
-  font-weight: bold;
-  font-size: 14px;
-  color: #4a4a4a;
-  line-height: 17px;
+    font-weight: bold;
+    font-size: 14px;
+    color: #4a4a4a;
+    line-height: 17px;
 }
 
 h2,
 h3,
 h4,
 h5 {
-  padding: 10px 5%;
-
+    padding: 10px 5%;
 }
 
-
 .date-text {
-  font-style: italic;
-  font-size: 14px;
-  color: #999;
-  line-height: 16px;
-/*  float: left;*/
+    font-style: italic;
+    font-size: 14px;
+    color: #999;
+    line-height: 16px;
+/*  float: left;*/;
 }
 
 .location-text {
-  font-style: italic;
-  font-size: 14px;
-  color: #999;
-  line-height: 16px;
-  float: right;
-
+    font-style: italic;
+    font-size: 14px;
+    color: #999;
+    line-height: 16px;
+    float: right;
 }
 
 p {
-  font-size: 14px;
-  color: #333;
-  line-height: 21px;
+    font-size: 14px;
+    color: #333;
+    line-height: 21px;
 }
 
 a, a:visited {
-  color: blue;
-  text-decoration: none;
-  margin-top: 10px;
-  display: block;
+    color: blue;
+    text-decoration: none;
+    margin-top: 10px;
+    display: block;
     cursor: pointer;
 }
-
 
 .welcome-message {
     font-style: italic;
@@ -121,59 +117,58 @@ a, a:visited {
     display: inline-flex;
     padding-left: 0px !important;
     padding-right: 0px !important;
-
 }
 
-.blue{
-    color:blue;
+.blue {
+    color: blue;
 }
 
-.blue-text{
-    color:blue;
+.blue-text {
+    color: blue;
 }
 
 .white-text {
-  font-weight: bold;
-  color: gray;
+    font-weight: bold;
+    color: gray;
 }
 
 .gray {
-  background-color: lightgray;
-  padding-bottom: 10px;
-  clear: both;
+    background-color: lightgray;
+    padding-bottom: 10px;
+    clear: both;
 }
 
 .dark-gray {
-  background-color: #CCCCCC;
+    background-color: #CCCCCC;
 }
 
 /* TODO: Replace with image later */
 #header {
-  background-color: white;
+    background-color: white;
 }
 
 .flex-box {
-  display: -webkit-flex;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  padding: 10px;
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 10px;
 }
 
 .flex-column {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  padding: 10px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    padding: 10px;
 }
 
 .center-content {
-  padding: 2.5% 5%;
+    padding: 2.5% 5%;
 }
 
 ul {
-  list-style-type: none;
+    list-style-type: none;
 }
 
 .biopic {
@@ -185,94 +180,95 @@ ul {
 }
 
 img {
-  padding: 10px;
+    padding: 10px;
 }
 
 span {
-  padding: 5px;
+    padding: 5px;
 }
 
 #lets-connect {
-  text-align: center;
+    text-align: center;
 }
 
 /* Media queries to handle various device widths */
 
 @media only screen and (max-width: 1024px) {
-  #lets-connect {
-    margin-top: 5%;
-  } 
+    #lets-connect {
+        margin-top: 5%;
+    };
 }
 
 @media only screen and (max-width:900px) {
-  .biopic {
-    width: 175px;
-  }
+    .biopic {
+        width: 175px;
+    };
 }
 
 @media only screen and (max-width: 750px) {
-  #lets-connect {
-    margin-top: 10%;
-  }
-  .biopic {
-    width: 150px;
-  }
-  .welcome-message {
-    display: -webkit-inline-box;
-      padding-top: 20px;
-  }
+    #lets-connect {
+        margin-top: 10%;
+    }
+
+    .biopic {
+        width: 150px;
+    }
+
+    .welcome-message {
+        display: -webkit-inline-box;
+        padding-top: 20px;
+    };
 }
 
 #map {
-  display: block;
-  height: 100%;
-  margin: 0 5%;
+    display: block;
+    height: 100%;
+    margin: 0 5%;
 }
 
 #mapDiv {
-  height: 400px;
-  width: 100%;
-  padding-bottom: 5%;
+    height: 400px;
+    width: 100%;
+    padding-bottom: 5%;
 }
 
 @media only screen and (min-width: 750px) {
-  #skills-h3,
+    #skills-h3,
   .biopic {
-    display: inline-flex;
-  }
-    
+        display: inline-flex;
+    };
 }
 
 /*Skills Flexbox fix */
 #skills {
-  display: inline-flex;
+    display: inline-flex;
 }
 
 /*row fix */
-.row{
+.row {
     margin-right: 0;
-    margin-left:  0;
+    margin-left: 0;
 }
 
 /*button color fix */
 
-.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open .dropdown-toggle.btn-primary, .btn-primary{
-    background-color:gray;
-    border-color:darkgray;
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open .dropdown-toggle.btn-primary, .btn-primary {
+    background-color: gray;
+    border-color: darkgray;
 }
 
-.content-padding{
+.content-padding {
     padding-left: 5%;
     padding-right: 5%;
 }
 
 /*Project Images */
-.project-img{
+.project-img {
     width: 35%;
     display: inline-flex !important;
 }
 
-.heading-fix h2{
+.heading-fix h2 {
     padding-left: 0% !Important;
     padding-right: 0% !Important;
 }

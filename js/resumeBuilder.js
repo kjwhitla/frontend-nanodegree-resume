@@ -1,6 +1,6 @@
 var data = "%data%";
 
-//EDUCATION OBJECT & DISPLAY
+//BIO OBJECT & DISPLAY
 var bio = {
     "name": "Keegan Whitla",
     "role": "independent UI/UX developer, specializing in web design",
@@ -8,54 +8,54 @@ var bio = {
         "mobile": "248.935.0069",
         "mobileLink": "tel:2489350069",
         "email": "kjwhitla@gmail.com",
-        "emailLink":"mailto:kjwhitla@gmail.com",
+        "emailLink": "mailto:kjwhitla@gmail.com",
         "github": "kjwhitla",
-        "githubLink":"https://github.com/kjwhitla",
+        "githubLink": "https://github.com/kjwhitla",
         "twitter": "@MadeByKeegan",
-        "twitterLink":"https://twitter.com/madebyKeegan",
+        "twitterLink": "https://twitter.com/madebyKeegan",
         "location": "San Francisco, CA"
     },
     "welcomeMessage": "Eventually everything connects - people, ideas, objects. The quality of the connections is the key to quality per se.<br/> -Charles Eames",
     "skills": ["JavaScript", "jQuery", "HTML", "CSS", "Bootstrap", "Angular", "Python", "Swift"],
     "biopic": "../images/keegan-whitla.png",
-    "display": function () {
+    "display": function() {
 
         var formattedName = HTMLheaderName.replace(data, bio.name);
         var formattedRole = HTMLheaderRole.replace(data, bio.role);
-        
+
         $("#name-title").append(formattedName + formattedRole);
 
         var formattedPhoneLink = HTMLmobile.replace("#", bio.contacts.mobileLink);
         var formattedPhone = formattedPhoneLink.replace(data, bio.contacts.mobile);
-        
+
         var formattedEmailLink = HTMLemail.replace("#", bio.contacts.emailLink);
         var formattedEmail = formattedEmailLink.replace(data, bio.contacts.email);
-        
+
         var formattedGithubLink = HTMLgithub.replace("#", bio.contacts.githubLink);
         var formattedGithub = formattedGithubLink.replace(data, bio.contacts.github);
-        
+
         var formattedTwitterLink = HTMLtwitter.replace("#", bio.contacts.twitterLink);
         var formattedTwitter = formattedTwitterLink.replace(data, bio.contacts.twitter);
-        
-        var formattedLocationLink =HTMLlocation.replace("#","http://kjwhitla.github.io/#lets-connect");
+
+        var formattedLocationLink = HTMLlocation.replace("#", "http://kjwhitla.github.io/#lets-connect");
         var formattedLocation = formattedLocationLink.replace(data, bio.contacts.location);
-        
+
         $("#topContacts, #footerContacts").append(formattedPhone + formattedEmail + formattedGithub + formattedTwitter + formattedLocation);
-    
+
         var formattedPic = HTMLbioPic.replace("%data%", bio.biopic);
         var formattedWelcomeMsg = HTMLwelcomeMsg.replace(data, bio.welcomeMessage);
-        
+
         $("#header").append(formattedPic + formattedWelcomeMsg);
-            if (bio.skills.length > 0) {
+        if (bio.skills.length > 0) {
             $("#header").append(HTMLskillsStart);
             for (var numSkills = 0; numSkills < bio.skills.length; numSkills++) {
                 var skill = HTMLskills.replace("%data%", bio.skills[numSkills]);
                 $("#skills").append(skill);
-                
+
             }
             $("#header").append(HTMLskillsEnd);
-        }   
-        
+        }
+
     }
 };
 
@@ -63,21 +63,21 @@ var bio = {
 var education = {
 
     "schools": [{
-        "name": "Oakland University",
-        "location": "Rochester Hills, MI",
-        "degree": "Bachelor of Science",
-        "majors": ["Management of Information Systems", "Applied Technology in Business"],
-        "dates": "2010-2013",
-        "url": "http://oakland.edu"
-    },
-                {
-        "name": "University of Tongji",
-        "location": "Shanghai, China",
-        "degree": "Study Abroad Program",
-        "majors": ["International Relations"],
-        "dates": "2011",
-        "url": "http://www.tongji.edu.cn/english/"
-    }
+            "name": "Oakland University",
+            "location": "Rochester Hills, MI",
+            "degree": "Bachelor of Science",
+            "majors": ["Management of Information Systems", "Applied Technology in Business"],
+            "dates": "2010-2013",
+            "url": "http://oakland.edu"
+        },
+        {
+            "name": "University of Tongji",
+            "location": "Shanghai, China",
+            "degree": "Study Abroad Program",
+            "majors": ["International Relations"],
+            "dates": "2011",
+            "url": "http://www.tongji.edu.cn/english/"
+        }
     ],
 
     "onlineCourses": [
@@ -95,14 +95,14 @@ var education = {
             "url": "http://teamtreehouse.com"
         }
     ],
-    "display": function () {
+    "display": function() {
 
         if (education.schools.length > 0) {
 
             $("#education").append(HTMLschoolStart);
-            
-            education.schools.forEach(function (school) {
-                
+
+            education.schools.forEach(function(school) {
+
                 var formattedSchoolLink = HTMLschoolName.replace("#", school.url);
                 var formattedSchool = formattedSchoolLink.replace(data, school.name);
                 var formattedSchoolDegree = HTMLschoolDegree.replace(data, school.degree);
@@ -113,29 +113,30 @@ var education = {
                 $("#education").append(formattedSchool + formattedSchoolDegree);
                 $("#education").append(formattedSchoolLocation + formattedSchoolDates);
                 $("#education").append(formattedMajor);
-                
+
             });
         }
 
         if (education.onlineCourses.length > 0) {
 
             $("#education").append(HTMLonlineClasses);
-            education.onlineCourses.forEach(function (course) {
-                
+            education.onlineCourses.forEach(function(course) {
+
                 var formattedTitle = HTMLonlineTitle.replace(data, course.title);
                 formattedTitle = formattedTitle.replace("#", course.url);
                 formattedTitle = formattedTitle.replace("%onlineSchool%", course.school);
-                
-                var formattedCourseDates = HTMLonlineDates.replace(data, course.dates)
-                
+
+                var formattedCourseDates = HTMLonlineDates.replace(data, course.dates);
+
                 $("#education").append(formattedTitle);
                 $("#education").append(formattedCourseDates);
-                
+
             });
         }
     }
 };
 
+//WORK OBJECT & DISPLAY
 var work = {
 
     "jobs": [{
@@ -155,27 +156,27 @@ var work = {
             "description": "Global Implementation of Analytics for Tier 1 Ford web properties including Apps, multi-lingual websites, and Advertisements. Implement Ford's Analytics Tags in DTM with proper DTM Mapping and creating Data Layers along with configuring tools / tags in the backend. Create custom javascript logic where DTM does not have easy options to implement ex: 3rd Party Media Tags."
         }
     ],
-    "display": function () {
+    "display": function() {
 
         if (work.jobs.length > 0) {
-               work.jobs.forEach(function(job){
+            work.jobs.forEach(function(job) {
                 var employer = HTMLworkEmployer.replace(data, job.employer);
-                var workEmployer = employer.replace("#",job.url);
-                var workTitle = HTMLworkTitle.replace(data,job.title);
-                var workDates = HTMLworkDates.replace(data,job.dates);
-                var workLocation = HTMLworkLocation.replace(data,job.location);
-                var workDescription = HTMLworkDescription.replace(data,job.description);
-                
-                $("#workExperience").append(HTMLworkStart + workEmployer + workTitle + workLocation + workDates  + workDescription);
+                var workEmployer = employer.replace("#", job.url);
+                var workTitle = HTMLworkTitle.replace(data, job.title);
+                var workDates = HTMLworkDates.replace(data, job.dates);
+                var workLocation = HTMLworkLocation.replace(data, job.location);
+                var workDescription = HTMLworkDescription.replace(data, job.description);
 
-               });
+                $("#workExperience").append(HTMLworkStart + workEmployer + workTitle + workLocation + workDates + workDescription);
+
+            });
         }
     }
 };
 
+//PROJECTS OBJECT & DISPLAY
 var projects = {
-    "proj": [
-        {
+    "proj": [{
             "title": "Beer Exchange Mobile App",
             "dates": "Feb, 2014 - in progress",
             "link": "#",
@@ -198,31 +199,32 @@ var projects = {
         }
 
     ],
-    
-    "display": function () {
+
+    "display": function() {
         if (projects.proj.length > 0) {
 
-            projects.proj.forEach(function (proj) {
+            projects.proj.forEach(function(proj) {
                 var formattedProjectlink = HTMLprojectURL.replace("#", proj.link);
                 var formattedProject = HTMLprojectTitle.replace(data, proj.title);
-               
+
                 var formattedProjectDates = HTMLprojectDates.replace(data, proj.dates);
                 var formattedProjectDescription = HTMLprojectDescription.replace(data, proj.description);
-                
-                var  formattedProjectImages = "";
-                    if(proj.imageArray.length > 0){
-                        proj.imageArray.forEach(function(imageArray){
-                           var image = imageArray;
+
+                var formattedProjectImages = "";
+                if (proj.imageArray.length > 0) {
+                    proj.imageArray.forEach(function(imageArray) {
+                            var image = imageArray;
                             var formatImageString = HTMLprojectImage.replace(data, image);
                             formattedProjectImages = formattedProjectImages.concat(formatImageString);
                         }
-                                               
-                        )};
 
-                $("#projects").append(HTMLprojectStart + formattedProject + formattedProjectDates + formattedProjectDescription + formattedProjectImages );
+                    );
+                }
 
-            });      
-         }
+                $("#projects").append(HTMLprojectStart + formattedProject + formattedProjectDates + formattedProjectDescription + formattedProjectImages);
+
+            });
+        }
     }
 };
 
