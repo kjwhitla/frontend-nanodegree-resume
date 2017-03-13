@@ -5,8 +5,8 @@ var bio = {
     "name": "Keegan Whitla",
     "role": "independent UI/UX developer, specializing in web design",
     "contacts": {
-        "phone": "248.935.0069",
-        "phoneLink": "tel:2489350069",
+        "mobile": "248.935.0069",
+        "mobileLink": "tel:2489350069",
         "email": "kjwhitla@gmail.com",
         "emailLink":"mailto:kjwhitla@gmail.com",
         "github": "kjwhitla",
@@ -25,8 +25,8 @@ var bio = {
         
         $("#name-title").append(formattedName + formattedRole);
 
-        var formattedPhoneLink = HTMLmobile.replace("#", bio.contacts.phoneLink);
-        var formattedPhone = formattedPhoneLink.replace(data, bio.contacts.phone);
+        var formattedPhoneLink = HTMLmobile.replace("#", bio.contacts.mobileLink);
+        var formattedPhone = formattedPhoneLink.replace(data, bio.contacts.mobile);
         
         var formattedEmailLink = HTMLemail.replace("#", bio.contacts.emailLink);
         var formattedEmail = formattedEmailLink.replace(data, bio.contacts.email);
@@ -68,7 +68,7 @@ var education = {
         "degree": "Bachelor of Science",
         "majors": ["Management of Information Systems", "Applied Technology in Business"],
         "dates": "2010-2013",
-        "url": "#"
+        "url": "http://oakland.edu"
     },
                 {
         "name": "University of Tongji",
@@ -76,7 +76,7 @@ var education = {
         "degree": "Study Abroad Program",
         "majors": ["International Relations"],
         "dates": "2011",
-        "url": "#"
+        "url": "http://www.tongji.edu.cn/english/"
     }
     ],
 
