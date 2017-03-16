@@ -17,7 +17,7 @@ var bio = {
     },
     "welcomeMessage": "Eventually everything connects - people, ideas, objects. The quality of the connections is the key to quality per se.<br/> -Charles Eames",
     "skills": ["JavaScript", "jQuery", "HTML", "CSS", "Bootstrap", "Angular", "Python", "Swift"],
-    "biopic": "../images/keegan-whitla.png",
+    "biopic": "images/keegan-whitla.png",
     "display": function() {
 
         var formattedName = HTMLheaderName.replace(data, bio.name);
