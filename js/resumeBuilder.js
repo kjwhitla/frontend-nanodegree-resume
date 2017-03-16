@@ -176,44 +176,44 @@ var work = {
 
 //PROJECTS OBJECT & DISPLAY
 var projects = {
-    "proj": [{
+    "projects": [{
             "title": "Beer Exchange Mobile App",
             "dates": "Feb, 2014 - in progress",
             "link": "#",
             "description": "HTML, CSS, JavaScript, WordPress - An interactive Andriod/iOS App allowing you to reserve beverage prices at your favorite bars and restaurants.",
-            "imageArray": ["../images/project-1.png", "../images/project-1-2.png"]
+            "images": ["images/project-1.png", "images/project-1-2.png"]
         },
         {
             "title": "BraedenWhitla.com",
             "dates": "Jun, 2016 - present",
             "link": "#",
             "description": "HTML, CSS, jQuery, JavaScript, Bootstrap - An artist's portfolio must shine, and this website was built to do just that, stay lightweight, show quality images, and share contact information.",
-            "imageArray": ["../images/project-2.png"]
+            "images": ["images/project-2.png"]
         },
         {
             "title": "Lake Tahoe",
             "dates": "May, 2016",
             "link": "#",
             "description": "HTML, CSS, jQuery, JavaScript, Bootstrap - A templated design to showcase lake tahoe.",
-            "imageArray": ["../images/project-3.png"]
+            "images": ["images/project-3.png"]
         }
 
     ],
 
     "display": function() {
-        if (projects.proj.length > 0) {
+        if (projects.projects.length > 0) {
 
-            projects.proj.forEach(function(proj) {
-                var formattedProjectlink = HTMLprojectURL.replace("#", proj.link);
-                var formattedProject = HTMLprojectTitle.replace(data, proj.title);
+            projects.projects.forEach(function(projects) {
+                var formattedProjectlink = HTMLprojectURL.replace("#", projects.link);
+                var formattedProject = HTMLprojectTitle.replace(data, projects.title);
 
-                var formattedProjectDates = HTMLprojectDates.replace(data, proj.dates);
-                var formattedProjectDescription = HTMLprojectDescription.replace(data, proj.description);
+                var formattedProjectDates = HTMLprojectDates.replace(data, projects.dates);
+                var formattedProjectDescription = HTMLprojectDescription.replace(data, projects.description);
 
                 var formattedProjectImages = "";
-                if (proj.imageArray.length > 0) {
-                    proj.imageArray.forEach(function(imageArray) {
-                            var image = imageArray;
+                if (projects.images.length > 0) {
+                    projects.images.forEach(function(images) {
+                            var image = images;
                             var formatImageString = HTMLprojectImage.replace(data, image);
                             formattedProjectImages = formattedProjectImages.concat(formatImageString);
                         }
